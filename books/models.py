@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
 class Author(models.Model):
@@ -13,3 +14,13 @@ class Book(models.Model):
     pub_date = models.DateTimeField('date published')
     read_date = models.DateTimeField('date published')
     authors = models.ManyToManyField(Author)
+
+
+class User(AbstractUser):
+    location = models.CharField(max_length=30, blank=True)
+
+
+class Reading(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    date_joined = models.DateField()
