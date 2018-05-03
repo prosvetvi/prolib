@@ -14,6 +14,8 @@ class Book(models.Model):
     pub_date = models.DateTimeField('date published')
     read_date = models.DateTimeField('date published')
     authors = models.ManyToManyField(Author)
+    image = models.ImageField(blank=True, null=True)
+    file = models.FileField(blank=True, null=True)
 
 
 class User(AbstractUser):

@@ -126,3 +126,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'books.User'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
