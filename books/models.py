@@ -8,6 +8,9 @@ class Author(models.Model):
     patronymic = models.CharField(max_length=200)
     birth_date = models.DateTimeField('date birthday')
 
+    def __str__(self):
+        return self.surname
+
 
 class Book(models.Model):
     name = models.CharField(max_length=200)
@@ -16,6 +19,9 @@ class Book(models.Model):
     authors = models.ManyToManyField(Author)
     image = models.ImageField(blank=True, null=True)
     file = models.FileField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class User(AbstractUser):
