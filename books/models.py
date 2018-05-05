@@ -9,7 +9,7 @@ class Author(models.Model):
     birth_date = models.DateTimeField('date birthday')
 
     def __str__(self):
-        return self.surname
+        return u'%s %s' % (self.name, self.surname)
 
 
 class Book(models.Model):
