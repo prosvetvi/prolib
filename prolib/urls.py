@@ -21,5 +21,5 @@ from prolib.settings import MEDIA_URL, MEDIA_ROOT
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('books.urls')),
+    path('books/', include('books.urls')),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
