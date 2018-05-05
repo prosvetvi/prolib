@@ -15,7 +15,7 @@ class Author(models.Model):
 class Book(models.Model):
     name = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
-    read_date = models.DateTimeField('date published')
+    read_date = models.DateTimeField('date reading')
     authors = models.ManyToManyField(Author)
     image = models.ImageField(blank=True, null=True)
     file = models.FileField(blank=True, null=True)
